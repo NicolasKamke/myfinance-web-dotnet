@@ -14,13 +14,6 @@ namespace myfinance_web_dotnet.WebApi
             this._myFinanceDbContext = _myFinanceDbContext;
         }
 
-        [HttpGet]
-        public IActionResult GetTestValue()
-        {
-            var test = this._myFinanceDbContext.AccountTransaction.FirstOrDefault();
-            return Ok(new { Message = "Olá, este é um valor de teste!", Data = DateTime.Now });
-        }
-
         [HttpPost]
         public ActionResult AddTransaction(AccountTransaction accountTransaction)
         {
